@@ -5,7 +5,7 @@ else
   echo '0'>/tmp/next-node
   NODE=`cat /tmp/next-node`
 fi
-echo numactl -C ${NODE} --membind ${NODE} $0.x $@
+numactl -C ${NODE} --membind ${NODE} $0.x $@
 case ${NODE} in
 [0])
   #echo "Next time run on 1"
